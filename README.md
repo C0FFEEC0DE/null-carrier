@@ -1,57 +1,57 @@
-# Протоколы синхронизации времени в Casio Multiband 6
+# Time Synchronization Protocols in Casio Multiband 6
 
-Ниже приведён список радиопротоколов (сигналов времени) станций, которые поддерживаются системой **Casio Multiband 6**, а также подробные сведения о каждом из них.
+Below is a list of radio protocols (time signals) used by stations supported by **Casio Multiband 6**, along with detailed information about each one.
 
-## Список поддерживаемых протоколов
+## Supported Protocols
 
-1. **JJY (Япония)** — 40 кГц (Фукусима) и 60 кГц (Кюсю)
-2. **WWVB (США)** — 60 кГц (Форт‑Коллинз, Колорадо)
-3. **MSF (Великобритания)** — 60 кГц (Энторн)
-4. **DCF77 (Германия)** — 77,5 кГц (Майнфлинген)
-5. **BPC (Китай)** — 68,5 кГц (Шаньци)
+1. **JJY (Japan)** — 40 kHz (Fukushima) and 60 kHz (Kyushu)
+2. **WWVB (USA)** — 60 kHz (Fort Collins, Colorado)
+3. **MSF (United Kingdom)** — 60 kHz (Anthorn)
+4. **DCF77 (Germany)** — 77.5 kHz (Mainflingen)
+5. **BPC (China)** — 68.5 kHz (Shanxi)
 
-## Подробное описание протоколов
+## Protocol Details
 
-### JJY (Япония)
-- **Частоты:** 40 кГц (JJY40, Фукусима) и 60 кГц (JJY60, Кюсю).
-- **Модуляция:** амплитудная (on/off keying).
-- **Структура кадра:** 60‑секундный кадр, где каждый секундный импульс кодирует бит данных.
-- **Кодирование битов:** длительность паузы/несущей в секунду (обычно 0,2 с для «0» и 0,5 с для «1»).
-- **Передаваемые данные:** точное время, дата, номер года, день недели, информация о высокосекундной коррекции и переходах на летнее/зимнее время.
-- **Особенности:** два передатчика обеспечивают лучшую надёжность при приёме в разных регионах Японии.
+### JJY (Japan)
+- **Frequencies:** 40 kHz (JJY40, Fukushima) and 60 kHz (JJY60, Kyushu).
+- **Modulation:** amplitude (on/off keying).
+- **Frame structure:** 60-second frame where each second pulse encodes one data bit.
+- **Bit encoding:** duration of carrier drop within the second (typically 0.2 s for “0” and 0.5 s for “1”).
+- **Data transmitted:** precise time, date, year number, day of week, leap second information, and daylight saving time transitions.
+- **Notes:** two transmitters improve reception reliability across Japan.
 
-### WWVB (США)
-- **Частота:** 60 кГц (Форт‑Коллинз, Колорадо).
-- **Модуляция:** амплитудная; дополнительно используется фазовая модуляция для повышенной устойчивости (в новых реализациях).
-- **Структура кадра:** 60‑секундный кадр с 60 битами.
-- **Кодирование битов:** длительность снижения амплитуды несущей в течение секунды (0,2 с, 0,5 с, 0,8 с).
-- **Передаваемые данные:** время UTC, дата, индикаторы переходов на летнее/зимнее время, флаги высокой точности.
-- **Особенности:** широко распространённый стандарт для радиосинхронизации в Северной Америке.
+### WWVB (USA)
+- **Frequency:** 60 kHz (Fort Collins, Colorado).
+- **Modulation:** amplitude; phase modulation is also used in newer implementations for improved robustness.
+- **Frame structure:** 60-second frame with 60 bits.
+- **Bit encoding:** duration of carrier amplitude reduction within the second (0.2 s, 0.5 s, 0.8 s).
+- **Data transmitted:** UTC time, date, daylight saving time indicators, and high-accuracy flags.
+- **Notes:** widely used standard for radio time synchronization in North America.
 
-### MSF (Великобритания)
-- **Частота:** 60 кГц (Энторн).
-- **Модуляция:** амплитудная (on/off keying).
-- **Структура кадра:** 60‑секундный кадр с минутной структурой.
-- **Кодирование битов:** длительность паузы/несущей в секунду (обычно 0,1 с для «0», 0,2 с для «1», 0,5 с для маркеров).
-- **Передаваемые данные:** время UTC, дата, индикаторы перехода на летнее/зимнее время, информация о високосных секундах.
-- **Особенности:** основной радиосигнал времени для Великобритании.
+### MSF (United Kingdom)
+- **Frequency:** 60 kHz (Anthorn).
+- **Modulation:** amplitude (on/off keying).
+- **Frame structure:** 60-second frame with minute structure.
+- **Bit encoding:** duration of carrier drop within the second (typically 0.1 s for “0”, 0.2 s for “1”, 0.5 s for markers).
+- **Data transmitted:** UTC time, date, daylight saving time indicators, leap second information.
+- **Notes:** primary radio time signal for the United Kingdom.
 
-### DCF77 (Германия)
-- **Частота:** 77,5 кГц (Майнфлинген, близ Франкфурта).
-- **Модуляция:** амплитудная; дополнительно фазовая модуляция на современных приёмниках.
-- **Структура кадра:** 59 бит данных в минуту, 60‑я секунда — метка кадра.
-- **Кодирование битов:** снижение амплитуды на 0,1 с («0») или 0,2 с («1») в начале секунды.
-- **Передаваемые данные:** время UTC/ CET/ CEST, дата, флаги переходов, високосные секунды.
-- **Особенности:** один из самых распространённых европейских сигналов времени.
+### DCF77 (Germany)
+- **Frequency:** 77.5 kHz (Mainflingen, near Frankfurt).
+- **Modulation:** amplitude; phase modulation on modern receivers.
+- **Frame structure:** 59 data bits per minute, 60th second is the frame marker.
+- **Bit encoding:** amplitude reduction for 0.1 s (“0”) or 0.2 s (“1”) at the start of the second.
+- **Data transmitted:** UTC/CET/CEST time, date, transition flags, leap seconds.
+- **Notes:** one of the most widely used European time signals.
 
-### BPC (Китай)
-- **Частота:** 68,5 кГц (Шаньци).
-- **Модуляция:** амплитудная.
-- **Структура кадра:** минутный кадр с побитной передачей информации.
-- **Кодирование битов:** длительность паузы/несущей, аналогично другим длинноволновым станциям времени.
-- **Передаваемые данные:** время UTC, дата, информация о переходах и високосных секундах.
-- **Особенности:** обеспечивает синхронизацию в пределах Китая и сопредельных регионов.
+### BPC (China)
+- **Frequency:** 68.5 kHz (Shanxi).
+- **Modulation:** amplitude.
+- **Frame structure:** minute-long frame with bitwise data transmission.
+- **Bit encoding:** carrier drop duration, similar to other longwave time stations.
+- **Data transmitted:** UTC time, date, transition information, leap seconds.
+- **Notes:** provides synchronization within China and neighboring regions.
 
 ---
 
-Если вам нужно добавить дополнительные станции или расширить описание конкретного протокола, сообщите — помогу дополнить.
+If you want to add more stations or expand a specific protocol description, let me know and I will help extend it.
